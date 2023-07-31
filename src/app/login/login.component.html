@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-6 container border rounded p-5">
+    <h2 class="text-uppercase text-center">Login</h2>
+    <form id="loginForm" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="mt-3">
+        <label for="email">Email</label>
+        <input type="text" id="email" ngModel name="email" required minlength="5" email #email="ngModel" class="form-control">
+        <small *ngIf="email.errors?.['required']" class="text-danger d-block">Please enter Email!</small>
+        <small *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">Please enter correctly Email!</small>
+      </div>
+      <div class="mt-3">
+        <label for="pass">Password</label>
+        <input type="password" id="pass" ngModel name="pass" required minlength="5" #pass="ngModel" class="form-control">
+        <small *ngIf="pass.errors?.['required']" class="text-danger">Please enter Password!</small>
+        <small *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="text-danger">Please enter correctly Password!</small>
+      </div>
+      <div class="mt-4 text-center">
+        <button [disabled]="loginForm.invalid" class="btn btn-outline-secondary text-uppercase w-75 py-2">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Hat (new)"
+    },
+    {
+      "id": 2,
+      "name": "Clothes"
+    },
+    {
+      "id": 3,
+      "name": "Computer "
+    },
+    {
+      "id": 4,
+      "name": "Laptop"
+    },
+    {
+      "id": "6",
+      "name": "Tivi"
+    }
+  ]
+}

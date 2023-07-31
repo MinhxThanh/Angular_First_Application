@@ -1,0 +1,31 @@
+<hr>
+<div class="container-fluid row my-5">
+  <form action="" (ngSubmit)="changeProductDetail(detailForm)" #detailForm="ngForm" class="col-8 container border rounded-lg p-5" >
+    <h3 class="text-center mb-5 text-uppercase">Product Detail</h3>
+    <div class="mb-3">
+      <label for="productCode" class="form-label">Product Code</label>
+      <input type="text" class="form-control" id="productCode" name="productCode" [(ngModel)]="product.productCode" placeholder="Enter Code!">
+    </div>
+    <div class="mb-3">
+      <label for="productName" class="form-label">Product Name</label>
+      <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="product.productName" placeholder="Enter Name!">
+    </div>
+    <div class="mb-3">
+      <label for="starRating" class="form-label">Product rate</label>
+      <input type="number" class="form-control" id="starRating" name="starRating" [(ngModel)]="product.starRating" placeholder="Enter Rate!">
+    </div>
+    <div class="text-center mt-5">
+      <button type="submit" class="btn btn-outline-success px-5">Update</button>
+    </div>
+  </form>
+
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item active">Product</li>
+      <li class="list-group-item">Code: {{product.productCode}}</li>
+      <li class="list-group-item">Name: {{product.productName}}</li>
+      <li class="list-group-item">Rating: {{product.starRating}}</li>
+      <li class="list-group-item">JSON: {{product | json}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+  <form class="col-8 container border rounded-lg p-5" >
+    <h3 class="text-center mb-5 text-uppercase">Category Detail</h3>
+    <div class="mb-3">
+      <label for="id" class="form-label"> Id</label>
+      <input type="text" class="form-control" id="id" name="id" [(ngModel)]="category.id" placeholder="Enter Id!">
+      <small class="text-danger">Please enter ID!</small>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="category.name" placeholder="Enter Name!">
+      <small class="text-danger">Please enter NAME!</small>
+    </div>
+    <div class="text-center mt-5">
+      <button (click)="save()" class="btn btn-outline-primary px-5 text-uppercase">Save</button>
+      <button (click)="update()" class="btn btn-outline-success px-5 text-uppercase">Update</button>
+      <button (click)="delete()" class="btn btn-outline-danger px-5 text-uppercase">Delete</button>
+
+    </div>
+  </form>
+</div>

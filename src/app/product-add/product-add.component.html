@@ -1,0 +1,34 @@
+<form [formGroup]="productForm" class="col-8 container border rounded-lg p-5" >
+  <h3 class="text-center mb-5 text-uppercase">Product add</h3>
+  <div class="mb-3">
+    <label for="productCode" class="form-label">Product Code</label>
+    <input type="text" class="form-control" id="productCode" name="productCode" formControlName="code" placeholder="Enter Code!">
+    <div *ngIf="!productForm.get('code')?.valid && (productForm.get('code')?.touched || productForm.get('code')?.dirty)" class="alert p-0 text-danger">
+      <small *ngIf="productForm.get('code')?.touched" class="d-block">Please enter product code!</small>
+      <small *ngIf="productForm.get('code')?.invalid">Please enter more than 5!</small>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="productName" class="form-label">Product Name</label>
+    <input type="text" class="form-control" id="productName" name="productName" formControlName="name" placeholder="Enter Name!">
+    <div *ngIf="!productForm.get('name')?.valid && (productForm.get('name')?.touched || productForm.get('name')?.dirty)" class="alert p-0 text-danger">
+      <small *ngIf="productForm.get('name')?.touched" class="d-block">Please enter product name!</small>
+      <small *ngIf="productForm.get('name')?.invalid">Please enter more than 5!</small>
+    </div>
+  </div>
+  <div class="mb-3" formArrayName="listImage">
+    <label for="productName" class="form-label">Product Image</label>
+    <div class="mb-2 d-flex" *ngFor="let image of listImage.controls; let i = index">
+      <div [formControlName]="i" my-2>
+        <span>{{i}}</span>
+        <input formControlName="imageName" type="text" class="form-control-sm mx-2" placeholder="Name Image"/>
+        <input formControlName="link" type="text" class="form-control-sm" placeholder="Link Image"/>
+      </div>
+      <button (click)="removeImage(i)" class="mx-2">Remove</button>
+    </div>
+    <button class="btn btn-outline-primary text-uppercase d-block" (click)="addImage()">ADD image</button>
+  </div>
+  <div class="text-center mt-5">
+    <button (click)="onSubmit()" class="btn btn-outline-success px-5 text-uppercase">add</button>
+  </div>
+</form>

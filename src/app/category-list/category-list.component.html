@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <h4>Category List</h4>
+  </div>
+  <div class="card-body">
+    <table class="table-hover table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <td></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of categories">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>
+          <a [routerLink]="['/category/' + item.id]" class="button btn-outline-info">Edit</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

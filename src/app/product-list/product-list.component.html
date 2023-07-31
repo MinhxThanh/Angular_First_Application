@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <h4>Product List - ({{filterValue}})</h4>
+    <input type="text" class="text-right form-control-sm" [(ngModel)]="filterValue" (input)="filter()">
+  </div>
+  <div class="card-body">
+    <table class="table-hover table">
+      <thead>
+      <tr>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>5 Star Rating</th>
+        <td></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of products">
+        <td>{{item.productCode}}</td>
+        <td>{{item.productName}}</td>
+        <td>
+          <app-star [rating]="item.starRating" (ratingClicked)="changeStarRating($event)"></app-star>
+        </td>
+        <td>
+          <a [routerLink]="['/product-detail/' + item.productCode + '/' + item.productName + '/' + item.starRating]" class="button btn-outline-info">Edit</a>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
